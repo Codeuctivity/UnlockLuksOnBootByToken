@@ -1,0 +1,15 @@
+#!/bin/sh
+ 
+. /usr/share/initramfs-tools/hook-functions
+ 
+mkdir -p $DESTDIR/etc/
+cp -rp /etc/decryptkeydevice $DESTDIR/etc/
+ 
+for mod in dm_mod dm_crypt xts sha256 aesni_intel; do
+ manual_add_modules $mod
+done
+ 
+copy_exec /sbin/cryptsetup
+copy_exec /sbin/dmsetup
+copy_exec /lib/cryptsetup/askpass
+

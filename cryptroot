@@ -1,0 +1,1 @@
+source=/dev/sda5,target=sda5_crypt,lvm=/dev/mapper/ubuntu--vg-root,keyscript=/etc/decryptkeydevice/decryptkeydevice.sh,key=/dev/sdb

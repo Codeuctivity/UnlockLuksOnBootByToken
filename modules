@@ -1,0 +1,8 @@
+
+usbcore
+sd_mod
+ehci_hcd
+uhci_hcd
+ohci_hcd
+usb_storage
+
