@@ -1,17 +1,19 @@
-Howto unlock ar ubuntu 16.04/18.04 encrypted system on boot using an removable storage: 
+Howto unlock a ubuntu 16.04/18.04 encrypted system on boot using an removable storage: 
 
 Be carful. If something goes wrong, your system may stop booting.
 
 change
 *) sda5_crypt -> your encrypted root
+
 *) sda5 -> your unlocked root
+
 *) sdb -> your removeable device that will carry the key
+
 *) /dev/mapper/ubuntu--vg-root -> your lvm name of root (on my testmachine, this parameter was not needed)
 in initAutoUnlockOnBootConfig.sh and cryptroot
 
-change DECRYPTKEYDEVICE_DISKID="ata-VBOX_HARDDISK_VB53d36dfa-0ee59b83" 
+*) change DECRYPTKEYDEVICE_DISKID="ata-VBOX_HARDDISK_VB53d36dfa-0ee59b83" 
 in decryptkeydevice.sh to your removable device that will carry the key id (found in 
-
 
 Add (i am not sure if this is realy needed) ",keyscript=/etc/decryptkeydevice/decryptkeydevice.sh,key=/dev/sdb" to the line of sda5_crypt (root) in /etc/crypttab
 
@@ -19,7 +21,7 @@ chmod +x ~/initAutoUnlockOnBootConfig.sh
 sudo ./initAutoUnlockOnBootConfig.sh
 
 
-The example values in the scrits and configs fit to this config:
+The example values in the scripts and configs fit to this config:
 
 cryptsytem02:~$ lsblk -o name,uuid,mountpoint
 NAME           UUID                                   MOUNTPOINT
@@ -37,6 +39,9 @@ sdb
 
 
 Sources:
+
 https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/
+
 https://wiki.ubuntuusers.de/System_verschl%C3%BCsseln/Schl%C3%BCsselableitung/
+
 https://unix.stackexchange.com/questions/107810/why-my-encrypted-lvm-volume-luks-device-wont-mount-at-boot-time#107859
