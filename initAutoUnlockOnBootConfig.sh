@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# reset old config 
-rm -R /etc/decryptkeydevice
-
 # copy new config
 mkdir /etc/decryptkeydevice
 

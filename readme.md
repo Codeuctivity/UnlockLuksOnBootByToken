@@ -25,7 +25,7 @@ Thoroughly follow the steps specified below.
 
 ### 1. Adjust parameters in `cryptroot` and `generateKeyForCurrentDevice.sh`
 
-Replace the following values according to your system in:
+Replace the following values according to your system (use `$ lslbk` to get your parameters):
 
 - `sda5_crypt` -> your encrypted root partition
 
@@ -33,7 +33,7 @@ Replace the following values according to your system in:
 
 - `sdb` -> your removeable device that will carry the key
 
-- `/dev/mapper/ubuntu--vg-root` -> your lvm name of root (on my testmachine, this parameter was not needed)
+- `/dev/mapper/ubuntu--vg-root` -> your lvm name of root (on my test machine, this parameter was not needed)
 
 ### 2. Adjust parameters in `decryptkeydevice.sh`
 
@@ -52,7 +52,7 @@ $ ls /dev/disk/by-id/
 First, run:
 
 ```shell
-$ chmod +x ~/generateKeyForCurrentDevice.sh
+$ chmod +x ./generateKeyForCurrentDevice.sh
 ```
 
 Subsequently, run once for each device that should carry a decryption key:
@@ -60,6 +60,8 @@ Subsequently, run once for each device that should carry a decryption key:
 ```shell
 $ sudo ./generateKeyForCurrentDevice.sh
 ```
+
+Enter an existing decryption pass phrase when asked to do so.
 
 This creates the decryption key in the boot sector of the device and then adds it to your LUKS config. This also means that each removeable device will have a different decryption key.
 
@@ -75,12 +77,16 @@ initrd.img-4.15.0-29-generic  initrd.img-4.15.0-39-generic
 $ sudo cp /boot/initrd.img-4.15.0-39-generic /boot/initrd.img-4.15.0-39-generic.bak
 ```
 
+Then add the scripts to your boot config:
+
 ```shell
-$ chmod +x ~/initAutoUnlockOnBootConfig.sh
+$ chmod +x ./initAutoUnlockOnBootConfig.sh
 $ sudo ./initAutoUnlockOnBootConfig.sh
 ```
 
 If no error occurred during execution, you should be good to reboot. Otherwise, check the previous steps again and adjust you config. Then run again. If the error persists, restore you backed up `initrd.img`, otherwise you will most likely not be able to boot!
+
+> NOTE: If you have previously run `initAutoUnlockOnBootConfig.sh, you will get an error that the directory /etc/decryptkeydevice already exists. You can ignore this one!
 
 ## Sources
 
