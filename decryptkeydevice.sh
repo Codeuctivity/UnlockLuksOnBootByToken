@@ -41,7 +41,7 @@
 # configuration for decryptkeydevice
 #
 
-# ID(s) of the USB/MMC key(s) for decryption (sparated by blanks)
+# ID(s) of the USB/MMC key(s) for decryption (separated by blanks)
 # as listed in /dev/disk/by-id/
 DECRYPTKEYDEVICE_DISKID="ata-VBOX_HARDDISK_VB53d36dfa-0ee59b83"
 
