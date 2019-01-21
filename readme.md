@@ -1,5 +1,8 @@
 # Unlock a Ubuntu 16.04/18.04 encrypted system on boot using a removable storage
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd6cf6c43b9542fc90fc2bb038a648a4)](https://app.codacy.com/app/stesee/UnlockLuksOnBootByToken?utm_source=github.com&utm_medium=referral&utm_content=Codeuctivity/UnlockLuksOnBootByToken&utm_campaign=Badge_Grade_Dashboard)
+
+
 The example values in the scripts and configs fit this config:
 
 ```shell
