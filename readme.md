@@ -29,10 +29,10 @@ Thoroughly follow the steps specified below.
 
 Replace the following values according to your system (use `$ lslbk` to get your parameters):
 
--`sda5_crypt` -> your encrypted root partition
--`sda5` -> your unlocked root partition
--`sdb` -> your removeable device that will carry the key
--`/dev/mapper/ubuntu--vg-root` -> your lvm name of root (on my test machine, this parameter was not needed)
+  * `sda5_crypt` -> your encrypted root partition
+  * `sda5` -> your unlocked root partition
+  * `sdb` -> your removeable device that will carry the key
+  * `/dev/mapper/ubuntu--vg-root` -> your lvm name of root (on my test machine, this parameter was not needed)
 
 ### 2. Adjust parameters in `decryptkeydevice.sh`
 
