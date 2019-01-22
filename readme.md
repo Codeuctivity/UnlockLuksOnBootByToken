@@ -2,7 +2,6 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd6cf6c43b9542fc90fc2bb038a648a4)](https://app.codacy.com/app/stesee/UnlockLuksOnBootByToken?utm_source=github.com&utm_medium=referral&utm_content=Codeuctivity/UnlockLuksOnBootByToken&utm_campaign=Badge_Grade_Dashboard)
 
-
 The example values in the scripts and configs fit this config:
 
 ```shell
@@ -93,8 +92,8 @@ If no error occurred during execution, you should be good to reboot. Otherwise, 
 
 ## Sources
 
-https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/
+<https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/>
 
-https://wiki.ubuntuusers.de/System_verschl%C3%BCsseln/Schl%C3%BCsselableitung/
+<https://wiki.ubuntuusers.de/System_verschl%C3%BCsseln/Schl%C3%BCsselableitung/>
 
-https://unix.stackexchange.com/questions/107810/why-my-encrypted-lvm-volume-luks-device-wont-mount-at-boot-time#107859
+<https://unix.stackexchange.com/questions/107810/why-my-encrypted-lvm-volume-luks-device-wont-mount-at-boot-time#107859>
